@@ -1,17 +1,18 @@
 import React from 'react';
 import styles from './App.scss';
-import Hero from '../Hero/Hero.js';
+import List from '../List/List.js'
 
 class App extends React.Component {
   render() {
+    const { component, title, subtitle } = styles;
+    const url = "http://uploads.kodilla.com/bootcamp/fer/11.react/space.png";
     return (
-      <React.Fragment>
-        <div className={styles.component}>
-          <h1 className={styles.title}>My first React app</h1>
-          <h2 className={styles.subtitle}>Hello world!</h2>
-        </div>
-        <Hero></Hero>
-      </React.Fragment>
+      <main className={component}>
+        <h1 className={title}>My first React app</h1>
+        <h2 className={subtitle}>Hello world!</h2>
+        <List title={['Things to do ', <sup key='1'>soon!</sup>]} image={url}>
+        </List>
+      </main>
     )
   }
 }
