@@ -9,7 +9,7 @@ import { settings } from '../../data/dataStore.js';
 class Column extends React.Component {
   static propTypes = {
     title: PropTypes.string,
-    icon: PropTypes.node,
+    icon: PropTypes.string,
   }
 
   state = {
