@@ -13,7 +13,7 @@ const Hero = props => {
       <img className={image} src={imageSrc} alt="space" />
     </header>
   );
-}
+};
 
 Hero.propTypes = {
   titleText: PropTypes.node,

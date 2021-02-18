@@ -6,10 +6,10 @@ class Card extends React.Component {
 
   static propTypes = {
     card: PropTypes.array,
+    title: PropTypes.string,
   }
   render() {
     const { component } = styles;
-    /* eslint-disable */
     const { title } = this.props;
     return (
       <section className={component}>
