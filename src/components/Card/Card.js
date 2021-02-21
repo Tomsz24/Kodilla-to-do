@@ -14,6 +14,7 @@ class Card extends React.Component {
     return (
       <section className={component}>
         {title}
+
       </section>
     );
   }
