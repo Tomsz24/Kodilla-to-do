@@ -5,12 +5,14 @@ import Icon from '../Icon/Icon.js';
 import Card from '../Card/Card.js';
 // import Creator from '../Creator/Creator.js';
 import { settings } from '../../data/dataStore.js';
+import Creator from '../Creator/Creator';
 
 class Column extends React.Component {
   static propTypes = {
     title: PropTypes.string,
     icon: PropTypes.string,
     cards: PropTypes.array,
+    addCard: PropTypes.func,
   }
 
   static defaultProps = {
@@ -21,7 +23,7 @@ class Column extends React.Component {
   // }
 
   render() {
-    const { title, icon, cards } = this.props;
+    const { title, icon, cards, addCard } = this.props;
 
     return (
 
@@ -33,10 +35,11 @@ class Column extends React.Component {
           ))}
         </div>
 
-        {/*
+
         <div className={styles.creator}>
-          <Creator text={settings.cardCreatorText} action={title => this.addCard(title)} />
-        </div> */}
+          {/* <Creator text={settings.cardCreatorText} action={title => this.addCard(title)} /> */}
+          <Creator action={addCard} />
+        </div>
       </section>
     );
   }
