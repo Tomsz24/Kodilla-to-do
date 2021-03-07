@@ -1,7 +1,8 @@
 import shortid from 'shortid';
+// import {searchString} from './searchStringRedux.js'
 
 
-export const getCardsForList = ({ cards }, columnId) => cards.filter(card => card.columnId == columnId);
+export const getCardsForList = ({ cards, searchString }, columnId) => cards.filter(card => card.columnId == columnId && new RegExp(searchString, 'i').test(card.title));
 
 
 // reducer name
