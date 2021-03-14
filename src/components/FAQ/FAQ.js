@@ -1,10 +1,10 @@
 import React from 'react';
 import Container from '../Container/Container.js';
 import Hero from '../Hero/Hero.js';
-import { info } from '../../data/dataStore.js'
+import { faq } from '../../data/dataStore.js';
 
-const Info = () => {
-  const { title, image, content } = info;
+const FAQ = () => {
+  const { image, content, title } = faq;
   return (
     <Container>
       <Hero imageSrc={image} />
@@ -14,4 +14,4 @@ const Info = () => {
   );
 }
 
-export default Info;
+export default FAQ;

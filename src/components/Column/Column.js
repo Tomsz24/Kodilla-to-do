@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styles from './Column.scss';
 import Icon from '../Icon/Icon.js';
 import Card from '../Card/Card.js';
-// import Creator from '../Creator/Creator.js';
 import { settings } from '../../data/dataStore.js';
 import Creator from '../Creator/Creator';
 
@@ -18,9 +17,7 @@ class Column extends React.Component {
   static defaultProps = {
     icon: settings.defaultColumnIcon,
   }
-  // state = {
-  //   cards: this.props.cards || [],
-  // }
+
 
   render() {
     const { title, icon, cards, addCard } = this.props;
@@ -37,7 +34,6 @@ class Column extends React.Component {
 
 
         <div className={styles.creator}>
-          {/* <Creator text={settings.cardCreatorText} action={title => this.addCard(title)} /> */}
           <Creator action={addCard} />
         </div>
       </section>

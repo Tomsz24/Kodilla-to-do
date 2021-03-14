@@ -19,6 +19,18 @@ export const pageContents = {
   subtitle: 'A simple to-do app, with lists, columns and cards',
 };
 
+export const faq = {
+  title: 'FAQ',
+  image: 'https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_1280.jpg',
+  content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio debitis blanditiis delectus provident voluptate ea inventore voluptas perspiciatis? Velit voluptas laudantium consequuntur ex quaerat pariatur est ipsa labore. Ullam, natus.',
+};
+
+export const info = {
+  title: 'Info',
+  image: 'https://cdn.pixabay.com/photo/2021/02/12/09/36/sunflowers-6007847_1280.jpg',
+  content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio debitis blanditiis delectus provident voluptate ea inventore voluptas perspiciatis? Velit voluptas laudantium consequuntur ex quaerat pariatur est ipsa labore. Ullam, natus.',
+};
+
 export const listData = {
   title: 'Things to do <sup>soon!</sup>',
   description: 'Interesting things I want to check out!',
