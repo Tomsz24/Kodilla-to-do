@@ -3,8 +3,6 @@ import { createActionAddColumn, getColumnsForList } from '../../redux/columnRedu
 import List from './List.js';
 
 
-// export const getColumnsForList = ({ columns }, listId) => columns.filter(column => column.listId == listId);
-
 const mapDispatchToProps = (dispatch, props) => ({
   addColumn: title => dispatch(createActionAddColumn({
     listId: props.id,
@@ -12,8 +10,15 @@ const mapDispatchToProps = (dispatch, props) => ({
   })),
 });
 
-const mapStateToProps = (state, props) => ({
-  columns: getColumnsForList(state, props.id),
-});
+const mapStateToProps = (state, props) => {
+  const id = props.match.params.id;
+  const filtredList = state.lists.filter(list => list.id == id);
+  const listParams = filtredList[0] || {};
+
+  return {
+    ...listParams,
+    columns: getColumnsForList(state, id),
+  }
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);
