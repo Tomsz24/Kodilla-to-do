@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './Search.scss';
-import Container from '../Container/Container.js';
 import Button from '../Button/Button';
 import PropTypes from 'prop-types';
 import { settings } from '../../data/dataStore';
 import Icon from '../Icon/Icon';
-import { withRouter } from "react-router";
+import Container from '../Container/Container';
+import { withRouter } from 'react-router';
+
 
 class Search extends React.Component {
   static propTypes = {
@@ -14,6 +15,7 @@ class Search extends React.Component {
     changeSearchString: PropTypes.func,
     countVisible: PropTypes.number,
     countAll: PropTypes.number,
+    history: PropTypes.object,
   }
 
   static defaultProps = {
@@ -21,7 +23,7 @@ class Search extends React.Component {
   }
 
   state = {
-    value: this.props.searchString || '',
+    value: this.props.searchString,
   }
 
   handleChange(event) {
@@ -32,7 +34,6 @@ class Search extends React.Component {
   }
 
   handleOK() {
-    this.props.changeSearchString(this.state.value);
     this.props.history.push(`/search/${this.state.value}`);
   }
 
@@ -47,22 +48,21 @@ class Search extends React.Component {
     const { value } = this.state;
     const { icon } = settings.search;
     return (
-      <Container>
-        <div className={styles.component}>
-          <input
-            type='text'
-            placeholder={text}
-            value={value}
-            onChange={event => this.handleChange(event)}
-          />
-          <div className={styles.buttons}>
-            <Button onClick={() => this.handleOK()}><Icon name={icon} /></Button>
-          </div>
-          <div>
-            {countVisible == countAll ? '' : `${countVisible} / ${countAll}`}
-          </div>
+      <div className={styles.component}>
+        <input
+          type='text'
+          placeholder={text}
+          value={value}
+          onChange={event => this.handleChange(event)}
+        />
+        <div className={styles.buttons}>
+          <Button onClick={() => this.handleOK()}><Icon name={icon} /></Button>
         </div>
-      </Container>
+        <div>
+          {countVisible == countAll ? '' : `${countVisible} / ${countAll}`}
+        </div>
+        <Container />
+      </div>
     );
   }
 }

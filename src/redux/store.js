@@ -1,6 +1,6 @@
 import { combineReducers, createStore } from 'redux';
 import columnsReducer from './columnRedux.js';
-import cardReducer from './cardRedux.js';
+import cardReducer from './cardsRedux.js';
 import initialStoreData from '../data/dataStore.js';
 import searchStringReducer from './searchStringRedux.js';
 

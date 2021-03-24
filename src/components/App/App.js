@@ -1,13 +1,15 @@
 import React from 'react';
-import Home from '../Home/HomeContainer.js';
-import Info from '../Info/Info.js';
-import MainLayout from '../MainLayout/MainLayout.js';
-import FAQ from '../FAQ/FAQ.js';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from '../Home/HomeContainer';
+import Info from '../Info/Info';
+import { BrowserRouter, Route } from 'react-router-dom';
+import MainLayout from '../MainLayout/MainLayout';
+import FAQ from '../FAQ/FAQ';
 import { AnimatedSwitch } from 'react-router-transition';
 import styles from './App.scss';
-import List from '../List/ListContainer.js';
-import Search from '../Search/Search.js';
+import List from '../List/ListContainer';
+import SearchResults from '../SearchResults/SearchResults';
+import SearchResultsContainer from '../SearchResults/SearchresultsContainer';
+
 
 const App = () => (
   <BrowserRouter>
@@ -16,13 +18,13 @@ const App = () => (
         atEnter={{ opacity: 0 }}
         atLeave={{ opacity: 0 }}
         atActive={{ opacity: 1 }}
-        className={styles.switchWrapper}
-      >
-        <Route exact path='/' component={Home} />
-        <Route exact path='/info' component={Info} />
-        <Route exact path='/faq' component={FAQ} />
+        className={styles.switchWrapper}>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/info" component={Info} />
+        <Route exact path="/FAQ" component={FAQ} />
         <Route exact path="/list/:id" component={List} />
-        <Route exact path="/search/:address" component={Search} />
+        <Route exact path="/search/..." component={SearchResults} />
+        <Route exact path="/search/:searchString" component={SearchResultsContainer} />
       </AnimatedSwitch>
     </MainLayout>
   </BrowserRouter>
